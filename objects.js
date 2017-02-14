@@ -37,3 +37,24 @@ function object_initializers() {
     myObject.function1();
     myObject.function2();
 }
+
+// This is an object constructor
+// Use a capital letter.
+function MyObject(property1, property2, function1, function2) {
+    this.property1 = property1;
+    this.property2 = property2;
+    this.function1 = function1;
+    this.function2 = function2;
+}
+
+function object_constructor() {
+    var myObject = new MyObject(
+        'value1',
+        'value2',
+        named_function,
+        function() {
+            console.log('Yet another anonymous function');
+        }
+    );
+    console.log(myObject);
+}
