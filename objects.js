@@ -58,3 +58,25 @@ function object_constructor() {
     );
     console.log(myObject);
 }
+
+// Object.create()
+// This allows you to create a prototype for an object without creating a constructor.
+var AnObject = {
+    property1: 'default_value1',
+    property2: 'default_value2',
+    function1: named_function,
+    function2: function() {
+        console.log('So many anonymous functions');
+    }
+};
+
+function object_create() {
+    var anObject = Object.create(AnObject);
+
+    console.log(anObject);
+    console.log(anObject.property1);
+    console.log(anObject['property2']);
+    console.log(anObject.property3);
+    anObject.function1();
+    anObject.function2();
+}
