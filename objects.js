@@ -3,11 +3,11 @@ function create_object() {
     myObject.property1 = 'value1';      // You can just define a new property.
     myObject['property2'] = 'value2';   // You can also define a property like this.
     // You can add functions to an object.
-    myObject.function1 = named_function;
-    myObject.function2 = function() {
+    myObject.method1 = named_function;
+    myObject.method2 = function() {
         console.log('I am an anonymous function!');
     }
-    myObject.function3 = function function3() {
+    myObject.method3 = function function3() {
         console.log('I am a local function that is not anonymous.');
     }
 
@@ -15,9 +15,9 @@ function create_object() {
     console.log(myObject.property1);
     console.log(myObject['property2']);
     console.log(myObject.property3);    // Will return 'undefined', not 'null'
-    myObject.function1();
-    myObject.function2();
-    myObject.function3();
+    myObject.method1();
+    myObject.method2();
+    myObject.method3();
 }
 
 function named_function() {
@@ -28,11 +28,11 @@ function object_initializers() {
     var myObject = {                // The Object consists of everything within braces.
         property1: 'value1',        // Separate properties and values with a colon.
         property2: 'value2',        // Separate different propertis with a comma.
-        function1: named_function,
-        function2: function() {
+        method1: named_function,
+        method2: function() {
             console.log('I too am an anonymous function');
         },
-        function3() {
+        method3() {
             console.log("In some contexts you don't need to give a property name or the function keyword.");
         }
     }
@@ -41,9 +41,9 @@ function object_initializers() {
     console.log(myObject.property1);
     console.log(myObject['property2']);
     console.log(myObject.property3);
-    myObject.function1();
-    myObject.function2();
-    myObject.function3();
+    myObject.method1();
+    myObject.method2();
+    myObject.method3();
 }
 
 // This is an object constructor
@@ -51,9 +51,9 @@ function object_initializers() {
 function MyObject(property1, property2, function1, function2, function3) {
     this.property1 = property1;
     this.property2 = property2;
-    this.function1 = function1;
-    this.function2 = function2;
-    this.function3 = function3;
+    this.method1 = function1;
+    this.method2 = function2;
+    this.method3 = function3;
 }
 
 function object_constructor() {
@@ -72,9 +72,9 @@ function object_constructor() {
     console.log(myObject.property1);
     console.log(myObject.property2);
     console.log(myObject.property3);
-    myObject.function1();
-    myObject.function2();
-    myObject.function3();
+    myObject.method1();
+    myObject.method2();
+    myObject.method3();
 }
 
 // Object.create()
@@ -82,11 +82,11 @@ function object_constructor() {
 var AnObject = {
     property1: 'default_value1',
     property2: 'default_value2',
-    function1: named_function,
-    function2: function() {
+    method1: named_function,
+    method2: function() {
         console.log('So many anonymous functions');
     },
-    function3() {
+    method3() {
         console.log('No function keyword or property name');
     }
 };
@@ -98,7 +98,7 @@ function object_create() {
     console.log(anObject.property1);
     console.log(anObject['property2']);
     console.log(anObject.property3);
-    anObject.function1();
-    anObject.function2();
-    anObject.function3();
+    anObject.method1();
+    anObject.method2();
+    anObject.method3();
 }
