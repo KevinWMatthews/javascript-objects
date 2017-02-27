@@ -102,3 +102,29 @@ function object_create() {
     anObject.method2();
     anObject.method3();
 }
+
+var GetAndSet = {
+    // This is a property of an object. Access it using '.'
+    property1: 'default',
+    // This getter function is accessed as if it were a property: using '.' instead of ().
+    // This is more powerful than directly acessing a property.
+    // We use a function that we create so we can format output, restrict things, etc.
+    // This can not have the same name as the property.
+    get property1_getter() {
+        return this.property1;
+    },
+    // This setter function is accessed as if it were a property: using '.<property> = <value>' instead of '<property>(<value)'.
+    // This is more powerful than directly acessing a property.
+    // We use a custom function that to we can verify data, format data, restrict things, etc.
+    // This can not have the same name as the property.
+    set property1_setter(value) {
+        return this.property1 = value;
+    }
+};
+
+function get_and_set() {
+    var getAndSet = Object.create(GetAndSet);
+    console.log(getAndSet.property1);
+    console.log(getAndSet.property1_setter = 7);
+    console.log(getAndSet.property1_getter);
+};
