@@ -1,5 +1,7 @@
 // Use getter and setter methods
 // This allows for custom actions (say, data filtering) instead of directly setting a property.
+// Getters are NOT called like functions. They are used like a property.
+// Setters are called like functions - they take an argument.
 var GetAndSet = {
     // This is a property of an object. Access it using '.'
     actual_property: 'default value',
